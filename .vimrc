@@ -17,7 +17,7 @@ set showcmd
 " 行番号を表示
 set number
 " 現在の行を強調表示
-set cursorline
+" set cursorline
 " 現在の行を強調表示（縦）
 " set cursorcolumn
 " 行末の1文字先までカーソルを移動できるように
@@ -86,7 +86,7 @@ if dein#load_state(s:dein_dir)
   " 予め TOML ファイル（後述）を用意しておく
   let g:rc_dir    = expand('~/.vim/rc')
   let s:toml      = g:rc_dir . '/dein.toml'
-  let s:lazy_toml = g:rc_dir . '/dein_lazy.toml'
+  " let s:lazy_toml = g:rc_dir . '/dein_lazy.toml'
 
   " TOML を読み込み、キャッシュしておく
   call dein#load_toml(s:toml,      {'lazy': 0})
