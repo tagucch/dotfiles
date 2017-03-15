@@ -1,0 +1,3 @@
+# dein.vimを無視(~/dotfiles/.vim/dein/)
+/.vim/dein/*
+/.vim/bundle/*
