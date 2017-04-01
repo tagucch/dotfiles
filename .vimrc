@@ -78,6 +78,9 @@ set showmatch             " 括弧入力時の対応する括弧を表示
 set wildmode=list:longest " コマンドラインの補完
 nnoremap j gj             " 折り返し時に表示行単位での移動できるようにする
 nnoremap k gk
+" 全角スペースを視覚化
+highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=white
+match ZenkakuSpace /　/
 
 
 " Tab系
@@ -117,3 +120,24 @@ augroup add_syntax_hilight
   autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set ft=markdown
 augroup END
 
+"=======================コピー&ペースト系=================
+" クリップボード
+set clipboard=unnamed,autoselect
+
+
+"----------コピーした際に自動インデントでズレない設定----
+if &term =~ "xterm"
+  let &t_SI .= "\e[?2004h"
+  let &t_EI .= "\e[?2004l"
+  let &pastetoggle = "\e[201~"
+
+  function XTermPasteBegin(ret)
+    set paste
+    return a:ret
+  endfunction
+
+  inoremap <special> <expr> <Esc>[200~ XTermPasteBegin("")
+endif
+"--------------------------------------------------------
+
+"==========================================================
