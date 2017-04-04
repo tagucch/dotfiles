@@ -68,7 +68,12 @@ scriptencoding utf-8
 
 " 見た目系
 set number                " 行番号を表示
-" set cursorline          " 現在の行を強調表示
+set cursorline            " 現在の行を強調表示
+"INSERTモードのときだけ横線解除
+augroup set_cursorline
+  autocmd!
+  autocmd InsertEnter,InsertLeave * set cursorline!  "redraw!
+augroup END
 " set cursorcolumn        " 現在の行を強調表示（縦）
 set virtualedit=onemore   " 行末の1文字先までカーソルを移動できるように
 set smartindent           " インデントはスマートインデント
@@ -76,8 +81,8 @@ set visualbell            " ビープ音を可視化
 set showmatch             " 括弧入力時の対応する括弧を表示
 " set laststatus=2        " ステータスラインを常に表示
 set wildmode=list:longest " コマンドラインの補完
-nnoremap j gj             " 折り返し時に表示行単位での移動できるようにする
-nnoremap k gk
+" nnoremap j gj             " 折り返し時に表示行単位での移動できるようにする
+" nnoremap k gk
 " 全角スペースを視覚化
 highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=white
 match ZenkakuSpace /　/
@@ -101,8 +106,7 @@ set ignorecase
 set smartcase
 " 検索文字列入力時に順次対象文字列にヒットさせる
 set incsearch
-" 検索時に最後まで行ったら最初に戻る
-set wrapscan
+" 検索時に最後まで行ったら最初に戻る set wrapscan
 " 検索語をハイライト表示
 set hlsearch
 " ESC連打でハイライト解除
@@ -125,6 +129,7 @@ augroup END
 set clipboard=unnamed,autoselect
 
 
+
 "----------コピーした際に自動インデントでズレない設定----
 if &term =~ "xterm"
   let &t_SI .= "\e[?2004h"
@@ -141,3 +146,14 @@ endif
 "--------------------------------------------------------
 
 "==========================================================
+
+"---------------NERDTreeの設定---------------------
+" 隠しファイルをデフォルトで表示させる
+let NERDTreeShowHidden = 1
+
+" デフォルトでツリーを表示させる
+let g:nerdtree_tabs_open_on_console_startup=1
+
+"<C-n>でNERDTreeTabsToggleを呼び出す設定
+map <C-n> <plug>NERDTreeTabsToggle<CR>
+"-------------------------------------------------
