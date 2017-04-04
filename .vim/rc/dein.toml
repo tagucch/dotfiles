@@ -47,3 +47,27 @@ on_ft = 'toml'
 # slimのSyntax
 [[plugins]]
 repo = 'slim-template/vim-slim'
+
+# coffeescriptを認識させる
+[[plugins]]
+repo = 'kchmck/vim-coffee-script'
+
+# ディレクトリツリーを表示する
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+
+# タブ間でtreeを同期する
+[[plugins]]
+repo = 'jistr/vim-nerdtree-tabs'
+
+# css3のシンタックス
+[[plugins]]
+repo = 'hail2u/vim-css3-syntax'
+
+# html5のシンタックス
+[[plugins]]
+repo = 'taichouchou2/html5.vim'
+
+# JavaScriptのシンタックス
+[[plugins]]
+repo = 'jelera/vim-javascript-syntax'
