@@ -66,8 +66,67 @@ repo = 'hail2u/vim-css3-syntax'
 
 # html5のシンタックス
 [[plugins]]
-repo = 'taichouchou2/html5.vim'
+repo = 'othree/html5.vim'
 
 # JavaScriptのシンタックス
 [[plugins]]
 repo = 'jelera/vim-javascript-syntax'
+
+# unite
+[[plugins]]
+repo = 'Shougo/unite.vim'
+
+# uneite-rails
+[[plugins]]
+repo = 'basyura/unite-rails'
+
+# rails-vim
+[[plugins]]
+repo = 'tpope/vim-rails'
+
+# vim-ruby
+repo = 'vim-ruby/vim-ruby'
+
+
+# syntastic
+# [[plugins]]
+# repo = 'scrooloose/syntastic'
+
+# ALE
+[[plugins]]
+repo = 'w0rp/ale'
+
+# メソッドなどのendを自動補完
+[[plugins]]
+repo = 'tpope/vim-endwise'
+
+# ドキュメント参照
+[[plugins]]
+repo = 'thinca/vim-ref'
+
+[[plugins]]
+repo = 'yuku-t/vim-ref-ri'
+
+# メソッドの定義元へ飛ぶ
+[[plugins]]
+repo = 'szw/vim-tags'
+
+# マークダウンのプラグイン
+[[plugins]]
+repo = 'tpope/vim-markdown'
+
+# colorscheme tender.vim
+[[plugins]]
+repo = 'jacoborus/tender.vim'
+
+# VimでGit操作
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+
+# タグで囲う
+[[plugins]]
+repo = 'tpope/vim-surround'
+
+# コメントアウトを楽に
+[[plugins]]
+repo = 'tomtom/tcomment_vim'

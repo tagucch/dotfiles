@@ -67,14 +67,19 @@ scriptencoding utf-8
 
 
 " 見た目系
+filetype plugin indent on
+set autoindent            " 自動インデントを有効に
+set ambiwidth=double      " 全角記号の表示幅を修正
 set number                " 行番号を表示
 set cursorline            " 現在の行を強調表示
+set scrolloff=8           " 上下8行の視界を確保
+set ttyfast               " カーソル移動高速化
+set autoread              " 外部でファイルに変更がされた場合は読みなおす
 "INSERTモードのときだけ横線解除
 augroup set_cursorline
   autocmd!
   autocmd InsertEnter,InsertLeave * set cursorline!  "redraw!
 augroup END
-" set cursorcolumn        " 現在の行を強調表示（縦）
 set virtualedit=onemore   " 行末の1文字先までカーソルを移動できるように
 set smartindent           " インデントはスマートインデント
 set visualbell            " ビープ音を可視化
@@ -104,7 +109,7 @@ set shiftwidth=2
 set ignorecase
 " 検索文字列に大文字が含まれている場合は区別して検索する
 set smartcase
-" 検索文字列入力時に順次対象文字列にヒットさせる
+" 検索文字列入力時に順次対象文字列にヒットさせる(インクリメンタルサーチ)
 set incsearch
 " 検索時に最後まで行ったら最初に戻る set wrapscan
 " 検索語をハイライト表示
@@ -114,6 +119,10 @@ nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
 " Syntax highlight ---------------
 syntax enable                    "シンタクスハイライトを有効化
+
+" colorscheme
+colorscheme tender
+
 augroup add_syntax_hilight
   autocmd!
   "シンタックスハイライトの追加
@@ -123,6 +132,12 @@ augroup add_syntax_hilight
   autocmd BufNewFile,BufRead *.coffee                   set ft=coffee
   autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set ft=markdown
 augroup END
+
+" othree/html5.vimの設定を追加(.html.erbに対応)
+" let g:html5_event_handler_attributes_complete = 1
+" let g:html5_rdfa_attributes_complete = 1
+" let g:html5_microdata_attributes_complete = 1
+" let g:html5_aria_attributes_complete = 1
 
 "=======================コピー&ペースト系=================
 " クリップボード
@@ -156,4 +171,13 @@ let g:nerdtree_tabs_open_on_console_startup=1
 
 "<C-n>でNERDTreeTabsToggleを呼び出す設定
 map <C-n> <plug>NERDTreeTabsToggle<CR>
+"-------------------------------------------------
+
+"==========================================================
+
+"---------------syntasticの設定---------------------
+" rubyファイルを開いたときのみ、保存時にrubocopを走らせる
+let g:syntastic_mode_map = { 'mode': 'passive',
+            \ 'active_filetypes': ['ruby'] }
+let g:syntastic_ruby_checkers = ['rubocop']
 "-------------------------------------------------
