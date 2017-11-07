@@ -53,12 +53,12 @@ repo = 'slim-template/vim-slim'
 repo = 'kchmck/vim-coffee-script'
 
 # ディレクトリツリーを表示する
-[[plugins]]
-repo = 'scrooloose/nerdtree'
+# [[plugins]]
+# repo = 'scrooloose/nerdtree'
 
 # タブ間でtreeを同期する
-[[plugins]]
-repo = 'jistr/vim-nerdtree-tabs'
+# [[plugins]]
+# repo = 'jistr/vim-nerdtree-tabs'
 
 # css3のシンタックス
 [[plugins]]
@@ -119,6 +119,14 @@ repo = 'tpope/vim-markdown'
 [[plugins]]
 repo = 'jacoborus/tender.vim'
 
+# colorscheme hybrid.vim
+[[plugins]]
+repo = 'w0ng/vim-hybrid'
+
+# colorscheme BadWolf
+[[plugins]]
+repo = 'sjl/badwolf'
+
 # VimでGit操作
 [[plugins]]
 repo = 'tpope/vim-fugitive'
@@ -130,3 +138,15 @@ repo = 'tpope/vim-surround'
 # コメントアウトを楽に
 [[plugins]]
 repo = 'tomtom/tcomment_vim'
+
+# 分割画面のサイズ変更を楽にできる
+[[plugins]]
+repo = 'kana/vim-submode'
+
+# ligthlineを追加する
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+
+# sessionを保存する
+[[plugins]]
+repo = 'tpope/vim-obsession'

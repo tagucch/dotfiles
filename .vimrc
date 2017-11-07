@@ -84,7 +84,7 @@ set virtualedit=onemore   " 行末の1文字先までカーソルを移動でき
 set smartindent           " インデントはスマートインデント
 set visualbell            " ビープ音を可視化
 set showmatch             " 括弧入力時の対応する括弧を表示
-" set laststatus=2        " ステータスラインを常に表示
+set laststatus=2        " ステータスラインを常に表示
 set wildmode=list:longest " コマンドラインの補完
 " nnoremap j gj             " 折り返し時に表示行単位での移動できるようにする
 " nnoremap k gk
@@ -121,7 +121,7 @@ nmap <Esc><Esc> :nohlsearch<CR><Esc>
 syntax enable                    "シンタクスハイライトを有効化
 
 " colorscheme
-colorscheme tender
+colorscheme badwolf
 
 augroup add_syntax_hilight
   autocmd!
@@ -181,3 +181,40 @@ let g:syntastic_mode_map = { 'mode': 'passive',
             \ 'active_filetypes': ['ruby'] }
 let g:syntastic_ruby_checkers = ['rubocop']
 "-------------------------------------------------
+
+"---------------tabの設定---------------------
+nnoremap s <Nop>
+nnoremap sj <C-w>j
+nnoremap sk <C-w>k
+nnoremap sl <C-w>l
+nnoremap sh <C-w>h
+nnoremap sJ <C-w>J
+nnoremap sK <C-w>K
+nnoremap sL <C-w>L
+nnoremap sH <C-w>H
+nnoremap sn gt
+nnoremap sp gT
+nnoremap sr <C-w>r
+nnoremap s= <C-w>=
+nnoremap sw <C-w>w
+nnoremap so <C-w>_<C-w>|
+nnoremap sO <C-w>=
+nnoremap sN :<C-u>bn<CR>
+nnoremap sP :<C-u>bp<CR>
+nnoremap st :<C-u>tabnew<CR>
+nnoremap sT :<C-u>Unite tab<CR>
+nnoremap ss :<C-u>sp<CR>
+nnoremap sv :<C-u>vs<CR>
+nnoremap sq :<C-u>q<CR>
+nnoremap sQ :<C-u>bd<CR>
+nnoremap sb :<C-u>Unite buffer_tab -buffer-name=file<CR>
+nnoremap sB :<C-u>Unite buffer -buffer-name=file<CR>
+
+call submode#enter_with('bufmove', 'n', '', 's>', '<C-w>>')
+call submode#enter_with('bufmove', 'n', '', 's<', '<C-w><')
+call submode#enter_with('bufmove', 'n', '', 's+', '<C-w>+')
+call submode#enter_with('bufmove', 'n', '', 's-', '<C-w>-')
+call submode#map('bufmove', 'n', '', '>', '<C-w>>')
+call submode#map('bufmove', 'n', '', '<', '<C-w><')
+call submode#map('bufmove', 'n', '', '+', '<C-w>+')
+call submode#map('bufmove', 'n', '', '-', '<C-w>-')
