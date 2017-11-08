@@ -79,11 +79,6 @@ repo = 'tpope/vim-rails'
 # vim-ruby
 repo = 'vim-ruby/vim-ruby'
 
-
-# syntastic
-# [[plugins]]
-# repo = 'scrooloose/syntastic'
-
 # ALE
 [[plugins]]
 repo = 'w0rp/ale'
