@@ -52,14 +52,6 @@ repo = 'slim-template/vim-slim'
 [[plugins]]
 repo = 'kchmck/vim-coffee-script'
 
-# ディレクトリツリーを表示する
-# [[plugins]]
-# repo = 'scrooloose/nerdtree'
-
-# タブ間でtreeを同期する
-# [[plugins]]
-# repo = 'jistr/vim-nerdtree-tabs'
-
 # css3のシンタックス
 [[plugins]]
 repo = 'hail2u/vim-css3-syntax'
