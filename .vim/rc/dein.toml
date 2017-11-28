@@ -137,3 +137,7 @@ repo = 'itchyny/lightline.vim'
 # sessionを保存する
 [[plugins]]
 repo = 'tpope/vim-obsession'
+
+# インデントを可視化する
+[[plugins]]
+repo = 'nathanaelkane/vim-indent-guides'
