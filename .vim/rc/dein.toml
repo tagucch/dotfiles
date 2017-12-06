@@ -141,3 +141,7 @@ repo = 'tpope/vim-obsession'
 # インデントを可視化する
 [[plugins]]
 repo = 'nathanaelkane/vim-indent-guides'
+
+# ログにANSIカラーシンタックスを適用する
+[[plugins]]
+repo = 'vim-scripts/AnsiEsc.vim'
