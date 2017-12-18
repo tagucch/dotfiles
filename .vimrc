@@ -97,7 +97,7 @@ match ZenkakuSpace /　/
 " 不可視文字を可視化(タブが「▸-」と表示される)
 set list listchars=tab:\▸\-
 " Tab文字を半角スペースにする
-set expandtab
+" set expandtab
 " 行頭以外のTab文字の表示幅（スペースいくつ分）
 set tabstop=2
 " 行頭でのTab文字の表示幅
@@ -120,8 +120,25 @@ nmap <Esc><Esc> :nohlsearch<CR><Esc>
 " Syntax highlight ---------------
 syntax enable                    "シンタクスハイライトを有効化
 
+
 " colorscheme
-colorscheme badwolf
+augroup colorscheme_config
+  autocmd!
+  " コメントを淡い黄緑にする
+  autocmd ColorScheme * highlight Comment ctermfg=158 guifg=#008800
+  " 基本の文字を明るめの緑にする
+  autocmd ColorScheme * highlight Normal ctermfg=48 guifg=#008800
+  " 背景色を黒にする
+  autocmd ColorScheme * highlight Normal ctermbg=none
+  autocmd ColorScheme * highlight LineNr ctermbg=none
+
+  " アンダーラインを引く(color terminal)
+  autocmd ColorScheme * highlight CursorLine cterm=underline ctermfg=NONE ctermbg=NONE
+  autocmd ColorScheme * highlight CursorLine gui=underline guifg=NONE guibg=NONE
+augroup END
+
+set background=dark
+colorscheme hybrid
 
 augroup add_syntax_hilight
   autocmd!
