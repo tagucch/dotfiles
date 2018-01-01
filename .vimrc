@@ -127,7 +127,7 @@ augroup colorscheme_config
   " コメントを淡い黄緑にする
   autocmd ColorScheme * highlight Comment ctermfg=158 guifg=#008800
   " 基本の文字を明るめの緑にする
-  autocmd ColorScheme * highlight Normal ctermfg=48 guifg=#008800
+  autocmd ColorScheme * highlight Normal ctermfg=84 guifg=#008800
   " 背景色を黒にする
   autocmd ColorScheme * highlight Normal ctermbg=none
   autocmd ColorScheme * highlight LineNr ctermbg=none
