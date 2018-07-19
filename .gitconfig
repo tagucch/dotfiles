@@ -1,0 +1,20 @@
+[core]
+	excludesfile = /Users/yklitter/.gitignore_global
+	editor = vim
+[user]
+	name = tagucch
+	email = y.t.3k.gunners@gmail.com
+[alias]
+  st = status
+  fe = fetch --prune
+  di = diff
+  co = checkout
+  sl = stash list
+  sp = stash pop
+[merge]
+  # ff = false
+[pull]
+  # ff = only
+
+[push]
+  default = current
