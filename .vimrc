@@ -1,7 +1,7 @@
 " dein.vimの設定(http://qiita.com/delphinus/items/00ff2c0ba972c6e41542)
 
 " プラグインが実際にインストールされるディレクトリ
-let s:dein_dir = expand('~/.cache/dein')
+let s:dein_dir = expand("~/.cache/dein")
 " dein.vim 本体
 let s:dein_repo_dir = s:dein_dir
 
@@ -97,7 +97,7 @@ match ZenkakuSpace /　/
 " 不可視文字を可視化(タブが「▸-」と表示される)
 set list listchars=tab:\▸\-
 " Tab文字を半角スペースにする
-" set expandtab
+set expandtab
 " 行頭以外のTab文字の表示幅（スペースいくつ分）
 set tabstop=2
 " 行頭でのTab文字の表示幅
