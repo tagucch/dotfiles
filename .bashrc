@@ -66,6 +66,7 @@ alias ll='ls -la'
 alias updatedb='sudo /usr/libexec/locate.updatedb'
 alias tree='tree -afL 2'
 alias be='bundle exec'
+alias localdelete='git branch --merged master | grep -vE '^\*|master$|develop$' | xargs -I % git branch -d %'
 
 # プロンプトにカレントディレクトリへの絶対パスと現在のブランチ名を表示する
 source /usr/local/git/contrib/completion/git-prompt.sh
